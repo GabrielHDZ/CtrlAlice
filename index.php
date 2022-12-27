@@ -34,23 +34,21 @@ echo 'welcome';
         </tr>
     </table>
 
-    <form>
+    <form id="form">
         <label>username</label>
         <input type="text" id="" placeholder="Username">
 
         <label>password</label>
         <input type="password" name="pass">
 
-        <input type="button" value="access" id="send" onclick="connectdb(e)">
-        <br>
-        <input type="button" value="create account">
+        <input type="submit" value="access">
 
     </form>
     <script>
-        let connectdb = (e) => {
-            e.preventDefault();
-            alert('second');
-        };
+        /* et connectdb = (e) => {
+                    e.preventDefault();
+                    alert('second');
+                }; */
     </script>
 </body>
 
