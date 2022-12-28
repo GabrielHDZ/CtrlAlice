@@ -14,41 +14,22 @@ echo 'welcome';
 </head>
 
 <body>
-    <table>
-        <thead>routes</thead>
 
-        <tr>
-            <th>action</th>
-            <th>route</th>
-            <th>type access</th>
-        </tr>
-        <tr>
-            <td>login to form acces</td>
-            <td>/login</td>
-            <td>REST</td>
-        </tr>
-        <tr>
-            <td>create account</td>
-            <td>/create</td>
-            <td>REST</td>
-        </tr>
-    </table>
-
-    <form id="form">
+    <form action="/route.php" method="post" name="form1" onsubmit="return validate()">
         <label>username</label>
-        <input type="text" id="" placeholder="Username">
+        <input type="text" name="username" placeholder="Username" require>
 
         <label>password</label>
-        <input type="password" name="pass">
+        <input type="password" name="pass" placeholder="password" require>
 
-        <input type="submit" value="access">
+        <input type="submit" value="Send">
 
     </form>
     <script>
-        /* et connectdb = (e) => {
-                    e.preventDefault();
-                    alert('second');
-                }; */
+        function validate() {
+
+
+        }
     </script>
 </body>
 
