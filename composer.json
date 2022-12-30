@@ -7,5 +7,11 @@
             "Gabriel\\ServerTienda\\": "src/"
         }
     },
+    "authors": [
+        {
+            "name": "gabrielHDZ",
+            "email": "gabrielhdz0102@gmail.com"
+        }
+    ],
     "require": {}
 }
