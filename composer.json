@@ -1,0 +1,11 @@
+{
+    "name": "gabriel/server-tienda",
+    "description": "this is the first project for publish in my portfolio",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gabriel\\ServerTienda\\": "src/"
+        }
+    },
+    "require": {}
+}

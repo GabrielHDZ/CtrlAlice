@@ -1,8 +1,3 @@
-<?php
-
-echo 'welcome';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +9,7 @@ echo 'welcome';
 </head>
 
 <body>
-
-    <form action="/route.php" method="post" name="form1" onsubmit="return validate()">
-        <label>username</label>
-        <input type="text" name="username" placeholder="Username" require>
-
-        <label>password</label>
-        <input type="password" name="pass" placeholder="password" require>
-
-        <input type="submit" value="Send">
-
-    </form>
-    <script>
-        function validate() {
-
-
-        }
-    </script>
+    <p>hola</p>
 </body>
 
 </html>
