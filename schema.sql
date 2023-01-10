@@ -2,13 +2,14 @@ create database if not exists ctrl_alice;
 use ctrl_alice;
 drop table if exists paciente,test_oxigeno;
 
-create table if not exists paciente(
-    id int not null, 
-    fist_name char(40) not null default '',
-    last_name char(40) not null,
-    age int(3) not null,
-    character_person varchar(255) not null default '',
-    text mediumtext not null,
+CREATE TABLE IF NOT EXISTS paciente(
+    id INT(11) NOT NULL AUTO_INCREMENT, 
+    fist_name CHAR(40) NOT NULL DEFAULT '',
+    last_name char(40) NOT NULL,
+    age int(3) NOT NULL,
+    character_person VARCHAR(255)NOT NULL DEFAULT'',
+    status int(1) NOT NULL DEFAULT 0,
+    text mediumtext NOT NULL,
     primary key (id)
     index name(fist_name,last_name,age)
 )ENGINNE=InnoDB DEFAULT CHARSET=latin1;
@@ -23,5 +24,12 @@ create table if not exists paciente(
     spo INT(3) NOT NULL,
     pr INT(3) NOT NULL,
     PRIMARY KEY(id),
-    for
+    INDEX (id_paciente),
+    FOREIGN KEY (id_paciente)
+    REFERENCES paciente(id)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+    
  )
+ /***
+    using in insert column fecha the function now()
+ */
