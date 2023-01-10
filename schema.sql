@@ -28,7 +28,6 @@ CREATE TABLE IF NOT EXISTS paciente(
     FOREIGN KEY (id_paciente)
     REFERENCES paciente(id)
     ON UPDATE CASCADE ON DELETE RESTRICT
-    
  )
  /***
     using in insert column fecha the function now()
