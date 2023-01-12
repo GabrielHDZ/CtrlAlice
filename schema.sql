@@ -1,6 +1,6 @@
-create database if not exists ctrl_alice;
-use ctrl_alice;
-drop table if exists paciente,test_oxigeno;
+CREATE DATABASE IF NOT EXISTS ctrl_alice;
+USE ctrl_alice;
+DROP TABLE IF EXISTS paciente,test_oxigeno;
 
 CREATE TABLE IF NOT EXISTS paciente(
     id INT(11) NOT NULL AUTO_INCREMENT, 
@@ -28,7 +28,20 @@ CREATE TABLE IF NOT EXISTS paciente(
     FOREIGN KEY (id_paciente)
     REFERENCES paciente(id)
     ON UPDATE CASCADE ON DELETE RESTRICT
- )
+ )ENGINNE=InnoDB DEFAULT CHARSET=latin1;
+
+
+ CREATE TABLE IF NOT EXISTS test_glucosa(
+    id INT NOT NULL,
+    id_paciente INT NOT NULL,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    percent INT(3) NOT NULL,
+    PRIMARY KEY(id),
+    INDEX (id_paciente),
+    FOREIGN KEY (id_paciente)
+    REFERENCES paciente(id)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+ )ENGINNE=InnoDB DEFAULT CHARSET=latin1;
  /***
     using in insert column fecha the function now()
  */
