@@ -1,21 +1,43 @@
 <?php
-namespace Gabriel\ServerTienda\helpers
 
-class Database{
+namespace Gabriel\ServerTienda\helpers;
+
+use PDO;
+use PDOException;
+
+class Database
+{
 
     // Datos de conexión a la base de datos
     private string $host;
     private string $user;
     private string $password;
     private string $dbname;
-    
-    public function __constructor(){
-        $this->host='localhost';
-        $this->user='root';
-        $this->password='';
-        $this->dbname='glucosaday';
+
+    public function __constructor()
+    {
+        $this->host = 'localhost';
+        $this->user = 'root';
+        $this->password = '';
+        $this->dbname = 'glucosaday';
     }
-    // Crea la conexión
+
+    public function connection()
+    {
+        try {
+            $connection = "mysql:host={$this->host};dbname={$this->dbname}";
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                pdo::ATTR_EMULATE_PREPARES => false
+            ];
+
+            $pdo = new PDO($connection, $this->user, $this->password, $options);
+            return $pdo;
+        } catch (PDOException $th) {
+            throw $th;
+        }
+    }
+    /* // Crea la conexión
     //$conn = new mysqli($host, $user, $password, $dbname);
     $conn = new mysqli($host, $user, $password, $dbname);
     
@@ -31,5 +53,5 @@ class Database{
     echo $response;
     
     // Cierra la conexión
-    mysqli_close($conn);
+    mysqli_close($conn); */
 }
