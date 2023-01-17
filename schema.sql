@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS ctrl_alice;
 CREATE DATABASE IF NOT EXISTS ctrl_alice;
 USE ctrl_alice;
 DROP TABLE IF EXISTS paciente,test_oxigeno;
@@ -10,9 +11,9 @@ CREATE TABLE IF NOT EXISTS paciente(
     character_person VARCHAR(255)NOT NULL DEFAULT'',
     status int(1) NOT NULL DEFAULT 0,
     text mediumtext NOT NULL,
-    primary key (id)
-    index name(fist_name,last_name,age)
-)ENGINNE=InnoDB DEFAULT CHARSET=latin1;
+    PRIMARY KEY (id)
+/*     INDEX(fist_name,last_name,age)
+ */)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /***
     example using index name in sentence sql
     select * from paciente where c1
@@ -28,7 +29,7 @@ CREATE TABLE IF NOT EXISTS paciente(
     FOREIGN KEY (id_paciente)
     REFERENCES paciente(id)
     ON UPDATE CASCADE ON DELETE RESTRICT
- )ENGINNE=InnoDB DEFAULT CHARSET=latin1;
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
  CREATE TABLE IF NOT EXISTS test_glucosa(
@@ -41,7 +42,7 @@ CREATE TABLE IF NOT EXISTS paciente(
     FOREIGN KEY (id_paciente)
     REFERENCES paciente(id)
     ON UPDATE CASCADE ON DELETE RESTRICT
- )ENGINNE=InnoDB DEFAULT CHARSET=latin1;
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
  /***
     using in insert column fecha the function now()
  */

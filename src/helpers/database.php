@@ -19,7 +19,7 @@ class Database
         $this->host = 'localhost';
         $this->user = 'root';
         $this->password = '';
-        $this->dbname = 'glucosaday';
+        $this->dbname = 'ctrl_alice';
     }
 
     public function connection()
