@@ -29,4 +29,28 @@ class Oxigeno extends Database
             'pr'=>$this->pr
         ]);
     }
+    public function getUUID(){
+        return $this->uuid;
+    }
+    public function setUUID($value){
+        $this->uuid=$value;
+    }
+    public function getpaciente(){
+        return $this->id_paciente;
+    }
+    public function setpaciente($value){
+        $this->id_paciente=$value;
+    }
+    public function getspo(){
+        return $this->spo;
+    }
+    public function setspo($value){
+        $this->spo=$value;
+    }
+    public function getpr(){
+        return $this->pr;
+    }
+    public function setpr($value){
+        $this->pr=$value;
+    }
 }
