@@ -14,7 +14,7 @@ class Database
     private string $password;
     private string $dbname;
 
-    public function __constructor()
+    public function __construct()
     {
         $this->host = 'localhost';
         $this->user = 'root';
@@ -37,21 +37,4 @@ class Database
             throw $th;
         }
     }
-    /* // Crea la conexión
-    //$conn = new mysqli($host, $user, $password, $dbname);
-    $conn = new mysqli($host, $user, $password, $dbname);
-    
-    // Verifica si la conexión fue exitosa
-    // if ($conn->connect_error) {
-    if (!$conn) {
-        die("Conexión fallida: " . mysqli_connect_error());
-    }
-    echo "Conexión exitosa";
-    
-    //buscar base
-    $response = mysqli_select_db($conn, 'glucosaday');
-    echo $response;
-    
-    // Cierra la conexión
-    mysqli_close($conn); */
 }

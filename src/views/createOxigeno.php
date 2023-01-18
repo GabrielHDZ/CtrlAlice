@@ -1,12 +1,13 @@
 <?php
-use Gabriel\ServerTienda\model\Oxigeno;
 
-if(count($_POST)>0){
-    $paciente=isset($_POST['id_paciente']) ?? '';
-    $spo=isset($_POST['spo']) ?? '';
-    $pr=isset($_POST['pr']) ?? '';
+use Gabriel\ServerTienda\models\Oxigeno;
 
-    $oxigeno=new Oxigeno($paciente,$spo,$pr);
+if (count($_POST) > 0) {
+    $paciente = isset($_POST['id_paciente']) ?? '';
+    $spo = isset($_POST['spo']) ?? '';
+    $pr = isset($_POST['pr']) ?? '';
+
+    $oxigeno = new Oxigeno($paciente, $spo, $pr);
     $oxigeno->save();
 }
 
