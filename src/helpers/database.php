@@ -22,7 +22,7 @@ class Database
         $this->dbname = 'ctrl_alice';
     }
 
-    public function connection()
+    public function connect()
     {
         try {
             $connection = "mysql:host={$this->host};dbname={$this->dbname}";

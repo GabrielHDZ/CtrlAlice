@@ -39,13 +39,13 @@ class Oxigeno extends Database{
     }
 
     //get static
-    public static funcion get($uuid){
+    public static function get($uuid){
         $db=new Database();
         $query=$db->connect()->prepare("SELECT * FROM test_oxigeno WHERE id=:uuid");
         $query->execute(['uuid'=>$uuid]);
         $oxigeno=Oxigeno::createFromArray($query->fetch(PDO::FETCH_ASSOC));
     }
-    public static createFromArray($arr):Oxigeno{
+    public static function createFromArray($arr):Oxigeno{
         $oxigeno=new Oxigeno($arr['id_paciente'],$arr['spo'],$arr['pr']);
         $oxigeno->setUUID($arr['id']);
 
