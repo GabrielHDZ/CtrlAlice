@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS paciente(
     age int(3) NOT NULL,
     character_person VARCHAR(255)NOT NULL DEFAULT'',
     status int(1) NOT NULL DEFAULT 0,
-    text mediumtext NOT NULL,
+/*     text mediumtext NOT NULL, */
     PRIMARY KEY (id)
 /*     INDEX(fist_name,last_name,age)
  */)ENGINE=InnoDB DEFAULT CHARSET=latin1;
