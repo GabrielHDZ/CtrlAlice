@@ -53,45 +53,45 @@ class Oxigeno extends Database
     public static function createFromArray($arr): Oxigeno
     {
         $oxigeno = new Oxigeno($arr['id_paciente'], $arr['spo'], $arr['pr']);
-        $oxigeno->setUUID($arr['id']);
+        $oxigeno->set_UUID($arr['id']);
 
         return $oxigeno;
     }
 
 
 
-    public function getUUID()
+    public function get_UUID()
     {
         return $this->uuid;
     }
-    public function setUUID($value)
+    public function set_UUID($value)
     {
         $this->uuid = $value;
     }
 
-    public function getIDPaciente()
+    public function get_idpaciente()
     {
         return $this->id_paciente;
     }
-    public function setIDPaciente($value)
+    public function set_idpaciente($value)
     {
         $this->id_paciente = $value;
     }
 
-    public function getSPO()
+    public function get_spo()
     {
         return $this->spo;
     }
-    public function setSPO($value)
+    public function set_spo($value)
     {
         $this->spo = $value;
     }
 
-    public function getPR()
+    public function get_pr()
     {
         return $this->pr;
     }
-    public function setPR($value)
+    public function set_pr($value)
     {
         $this->pr = $value;
     }
