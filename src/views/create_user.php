@@ -2,12 +2,13 @@
 
 use Gabriel\ServerTienda\models\User;
 
+
 if (count($_POST) > 0) {
-    $firstname = isset($_POST['txt_first']) ?? '';
-    $lastname = isset($_POST['txt_last']) ?? '';
-    $age = isset($_POST['txt_age']) ?? '';
-    $description = isset($_POST['txt_desc']) ?? '';
-    $status = isset($_POST['txt_state']) ?? '';
+    $firstname = $_POST['txt_first'];
+    $lastname = $_POST['txt_last'];
+    $age = $_POST['txt_age'];
+    $description = $_POST['txt_desc'];
+    $status = $_POST['txt_state'];
 
     $person = new User($firstname, $lastname, $age, $description, $status);
     $person->save();
@@ -25,23 +26,21 @@ if (count($_POST) > 0) {
 
 <body>
     <form action="?view=create_user" method="POST">
-        <label for="txt_first">Nombre del paciente</label>
-        <input type="text" name="txt_first">
-
-        <label for="txt_last">Apellidos del paciente</label>
+        <span>name</span>
+        <input type="text" name="txt_first" [>
+        <br>
+        <span>last name</span>
         <input type="text" name="txt_last">
-
-        <label for="txt_age">edad del paciente</label>
+        <br>
+        <span>age in number</span>
         <input type="number" name="txt_age">
-
-        <label for="txt_desc">Describe brevemente al paciente</label>
+        <br>
+        <span>description for the person</span>
         <input type="text" name="txt_desc">
-
-        <label for="txt_state">Persona Activa</label>
+        <br>
+        <span>state account</span>
         <input type="number" name="txt_state">
-
         <input type="submit" value="guardar">
-
     </form>
 </body>
 
