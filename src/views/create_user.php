@@ -27,7 +27,7 @@ if (count($_POST) > 0) {
 <body>
     <form action="?view=create_user" method="POST">
         <span>name</span>
-        <input type="text" name="txt_first" [>
+        <input type="text" name="txt_first">
         <br>
         <span>last name</span>
         <input type="text" name="txt_last">
