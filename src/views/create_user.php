@@ -42,6 +42,7 @@ if (count($_POST) > 0) {
         <input type="number" name="txt_state">
         <input type="submit" value="guardar">
     </form>
+
 </body>
 
 </html>
