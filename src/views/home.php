@@ -9,20 +9,20 @@
 </head>
 
 <body>
-    <nav>
+    <header>
         <section>
             <img src="" alt="svg logo">
-            <h1>ControlAlice</h1>
+            <h1>CtrlAlice</h1>
         </section>
-        <section>
+        <nav>
             <ul>
-                <li>Pacientes</li>
-                <li>Tests</li>
-                <li>Ajustes</li>
+                <li><a href="#" target="_parent" rel="noopener noreferrer">Pacientes</a></li>
+                <li><a href="#" target="_parent" rel="noopener noreferrer">Tests</a></li>
+                <li><a href="#" target="_parent" rel="noopener noreferrer">Ajustes</a></li>
             </ul>
-        </section>
+        </nav>
+    </header>
 
-    </nav>
 
 
 </body>
@@ -32,14 +32,22 @@
         font-size: 20px;
     }
 
-    nav {
+    header {
         display: flex;
         flex-direction: row;
     }
 
-    section {
-
+    nav {
+        display: flex;
+        flex-direction: column;
         background-color: burlywood;
+    }
+
+    nav>ul {
+        list-style-type: none;
+        text-decoration-style: none;
+        display: flex;
+        flex-direction: row;
     }
 </style>
 
