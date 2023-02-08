@@ -30,24 +30,41 @@
     * {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
     }
 
     header {
         display: flex;
         flex-direction: row;
+        width: 100%;
+        background-color: burlywood;
+    }
+
+    section {
+        width: 30%;
     }
 
     nav {
         display: flex;
         flex-direction: column;
-        background-color: burlywood;
+        width: 70%;
     }
 
     nav>ul {
-        list-style-type: none;
-        text-decoration-style: none;
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
+        margin: 5px;
     }
 </style>
 
