@@ -1,6 +1,6 @@
 # serverTienda
 
-## _this is a project for the manage and register the results and tests._
+## _this is a project for the manage and register the results and tests.
 
 ## Features
 
