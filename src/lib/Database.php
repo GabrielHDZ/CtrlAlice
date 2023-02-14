@@ -1,19 +1,28 @@
 <?php
 
-namespace Gabriel\ServerTienda\helpers;
+/* It creates a namespace called `Gabriel\ServerTienda\lib`. */
+
+namespace Gabriel\ServerTienda\lib;
+
+/* Importing the PDO and PDOException classes from the PDO and PDOException namespaces respectively. */
 
 use PDO;
 use PDOException;
 
+/* It creates a connection to the database using the PDO class. */
+
 class Database
 {
-
-    // Datos de conexión a la base de datos
+    /* Declaring the variables that will be used to connect to the database. */
     private string $host;
     private string $user;
     private string $password;
     private string $dbname;
 
+    /**
+     * The above function is a constructor function that sets the host, user, password, and dbname
+     * variables to the values of 'localhost', 'root', '', and 'ctrl_alice' respectively.
+     */
     public function __construct()
     {
         $this->host = 'localhost';
@@ -22,6 +31,11 @@ class Database
         $this->dbname = 'ctrl_alice';
     }
 
+    /**
+     * It creates a connection to the database using the PDO class.
+     * 
+     * @return The connection to the database.
+     */
     public function connect()
     {
         try {

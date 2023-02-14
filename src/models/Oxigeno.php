@@ -2,7 +2,7 @@
 
 namespace Gabriel\ServerTienda\models;
 
-use Gabriel\ServerTienda\helpers\Database;
+use Gabriel\ServerTienda\lib\Database;
 use PDO;
 
 class Oxigeno extends Database
@@ -57,8 +57,6 @@ class Oxigeno extends Database
 
         return $oxigeno;
     }
-
-
 
     public function get_UUID()
     {
