@@ -31,6 +31,7 @@ class Oxigeno extends Database
             'pr' => $this->pr
         ]);
     }
+
     public function update()
     {
         $query = $this->connect()->prepare("UPDATE test_oxigeno SET id_paciente=:id_paciente,fecha=NOW(),spo=:spo,pr=:pr WHERE id=:uuid");

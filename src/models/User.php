@@ -66,4 +66,19 @@ class User extends Database
             'id' => $this->id
         ]);
     }
+    //get static
+    public static function get($id)
+    {
+        $db = new Database();
+        $query = $db->connect()->prepare("SELECT * FROM paciente WHERE id=:id");
+        $query->execute(['id' => $id]);
+        $oxigeno = Oxigeno::createFromArray($query->fetch(PDO::FETCH_ASSOC));
+    }
+    public static function createFromArray($arr): Oxigeno
+    {
+        $oxigeno = new User($arr['id_paciente'], $arr['spo'], $arr['pr']);
+        $oxigeno->set_UUID($arr['id']);
+
+        return $oxigeno;
+    }
 }
