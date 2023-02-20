@@ -88,4 +88,8 @@ class User extends Database
     {
         $this->id = $id;
     }
+    public function get_id(): int
+    {
+        return $this->id;
+    }
 }
