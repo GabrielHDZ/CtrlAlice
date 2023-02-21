@@ -66,8 +66,14 @@ class User extends Database
             'id' => $this->id
         ]);
     }
-    //get static
-    public static function get($id)
+    /**
+     * It gets the data from the database and returns it as an object
+     * 
+     * @param id The id of the user you want to get the data from.
+     * 
+     * @return An object of type User.
+     */
+    public static function get_data_user($id)
     {
         $db = new Database();
         $query = $db->connect()->prepare("SELECT * FROM paciente WHERE id=:ide");
@@ -76,6 +82,13 @@ class User extends Database
         $usuario = User::createFromArray($query->fetch(PDO::FETCH_ASSOC));
         return $usuario;
     }
+    /**
+     * It takes an array of data and returns a new User object
+     * 
+     * @param arr array
+     * 
+     * @return User an object of type User.
+     */
     public static function createFromArray($arr): User
     {
         $usuario = new User($arr['first_name'], $arr['last_name'], $arr['age'], $arr['character_person'], $arr['stateAc']);
@@ -84,12 +97,31 @@ class User extends Database
     }
 
     //AGREGAR TODOS LOS SETTERS Y GETTERS DE LAS PROPIEDADES RESTANTES
+    /**
+     * > This function sets the value of the `id` property
+     * 
+     * @param int id The id of the user.
+     */
     public function set_id(int $id)
     {
         $this->id = $id;
     }
+    /**
+     * > This function returns the value of the `id` property
+     * 
+     * @return int The id of the object.
+     */
     public function get_id(): int
     {
         return $this->id;
+    }
+    /**
+     * This function returns the first name of the user
+     * 
+     * @return string The first name of the user.
+     */
+    public function get_first_name(): string
+    {
+        return $this->first_name;
     }
 }

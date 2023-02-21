@@ -44,5 +44,8 @@ if (count($_POST) > 0) {
     </form>
 
 </body>
+<script>
+    console.log('hello wold');
+</script>
 
 </html>
