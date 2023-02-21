@@ -1,3 +1,10 @@
+<?php
+
+use Gabriel\ServerTienda\models\User;
+
+$pacientes = User::get_data_all_pacientes();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +30,12 @@
         </nav>
     </header>
 
+    <?php foreach ($pacientes as $paciente) { ?>
+        <a href=""><span><?php echo $paciente->get_first_name(); ?></span></a>
+        <br>
 
+
+    <?php } ?>
 
 </body>
 <style>

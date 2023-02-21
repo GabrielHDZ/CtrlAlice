@@ -67,13 +67,29 @@ class User extends Database
         ]);
     }
     /**
+     * It gets all the data from the database and returns it as an array
+     * 
+     * @return array An array of objects.
+     */
+    public static function get_data_all_pacientes(): array
+    {
+        $pacientes = [];
+        $db = new Database();
+        $query = $db->connect()->query("SELECT * FROM paciente");
+        while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
+            $user = User::createFromArray($r);
+            array_push($pacientes, $user);
+        }
+        return $pacientes;
+    }
+    /**
      * It gets the data from the database and returns it as an object
      * 
      * @param id The id of the user you want to get the data from.
      * 
      * @return An object of type User.
      */
-    public static function get_data_user($id)
+    public static function get_data_paciente(int $id)
     {
         $db = new Database();
         $query = $db->connect()->prepare("SELECT * FROM paciente WHERE id=:ide");
