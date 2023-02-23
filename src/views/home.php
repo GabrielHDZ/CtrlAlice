@@ -31,7 +31,7 @@ $pacientes = User::get_data_all_pacientes();
     </header>
 
     <?php foreach ($pacientes as $paciente) { ?>
-        <a href=""><span><?php echo $paciente->get_first_name(); ?></span></a>
+        <a href="?view=user&id=<?php echo $paciente->get_id(); ?>"><span><?php echo $paciente->get_first_name(); ?></span></a>
         <br>
 
 

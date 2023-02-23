@@ -2,6 +2,14 @@
 
 use Gabriel\ServerTienda\models\User;
 
+$form = true;
+if (isset($_GET['create'])) {
+    if($_GET[''])
+} elseif (isset($_GET['view'])) {
+    $form = true;
+} else {
+    header('Location:?view=home');
+}
 
 if (count($_POST) > 0) {
     $firstname = $_POST['txt_first'];
@@ -40,7 +48,14 @@ if (count($_POST) > 0) {
         <br>
         <span>state account</span>
         <input type="number" name="txt_state">
-        <input type="submit" value="guardar">
+
+        <?php
+        echo ($form ? "<input type='submit' value='Update'>" : "<input type='submit' value='actualizar'>");
+        ?>
+
+        <!--         
+        : <input type="submit" value="agregar"> -->
+
     </form>
 
 </body>
