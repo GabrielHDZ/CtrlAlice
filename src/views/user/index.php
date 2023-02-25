@@ -11,6 +11,7 @@ if (isset($_GET['create'])) {
     header('Location:?view=home');
 }
 
+
 if (count($_POST) > 0) {
     $firstname = $_POST['txt_first'];
     $lastname = $_POST['txt_last'];
