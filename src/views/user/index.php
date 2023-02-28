@@ -3,10 +3,7 @@
 use Gabriel\ServerTienda\models\User;
 
 $form = true;
-if (isset($_GET['create'])) {
-    if($_GET[''])
-} elseif (isset($_GET['view'])) {
-    $form = true;
+if (isset($_GET['view'])) {
 } else {
     header('Location:?view=home');
 }
