@@ -30,9 +30,9 @@ if (count($_POST) > 0) {
             //$option equals 'update' or 'create' no more
             $option = $_GET['option'];
             if ($option == 'create') {
-                $form = true;
+                $person->save();
             } elseif ($option == 'update') {
-                $form = false;
+                $person
             }
         }
     } else {
@@ -40,7 +40,7 @@ if (count($_POST) > 0) {
     }
 
     $person = new User($firstname, $lastname, $age, $description, $status);
-    $person->save();
+    
 }
 ?>
 <!DOCTYPE html>
