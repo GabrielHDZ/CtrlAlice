@@ -24,6 +24,20 @@ if (count($_POST) > 0) {
     $age = $_POST['txt_age'];
     $description = $_POST['txt_desc'];
     $status = $_POST['txt_state'];
+    //desicion if option is create or update
+    if (isset($_GET['view'])) {
+        if (isset($_GET['option'])) {
+            //$option equals 'update' or 'create' no more
+            $option = $_GET['option'];
+            if ($option == 'create') {
+                $form = true;
+            } elseif ($option == 'update') {
+                $form = false;
+            }
+        }
+    } else {
+        header('Location:?view=home');
+    }
 
     $person = new User($firstname, $lastname, $age, $description, $status);
     $person->save();
