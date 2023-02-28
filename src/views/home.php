@@ -23,7 +23,7 @@ $pacientes = User::get_data_all_pacientes();
         </section>
         <nav>
             <ul>
-                <li><a href="#" target="_parent" rel="noopener noreferrer">Pacientes</a></li>
+                <li><a href="?view=user&option=create" target="_parent" rel="noopener noreferrer">Pacientes</a></li>
                 <li><a href="#" target="_parent" rel="noopener noreferrer">Tests</a></li>
                 <li><a href="#" target="_parent" rel="noopener noreferrer">Ajustes</a></li>
             </ul>
@@ -31,7 +31,7 @@ $pacientes = User::get_data_all_pacientes();
     </header>
 
     <?php foreach ($pacientes as $paciente) { ?>
-        <a href="?view=user&id=<?php echo $paciente->get_id(); ?>"><span><?php echo $paciente->get_first_name(); ?></span></a>
+        <a href="?view=user&option=update&id=<?php echo $paciente->get_id(); ?>"><span><?php echo $paciente->get_first_name(); ?></span></a>
         <br>
 
 
