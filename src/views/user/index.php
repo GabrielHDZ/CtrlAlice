@@ -4,6 +4,15 @@ use Gabriel\ServerTienda\models\User;
 
 $form = true;
 if (isset($_GET['view'])) {
+    if (isset($_GET['option'])) {
+        //$option equals 'update' or 'create' no more
+        $option = $_GET['option'];
+        if ($option == 'create') {
+            $form = true;
+        } elseif ($option == 'update') {
+            $form = false;
+        }
+    }
 } else {
     header('Location:?view=home');
 }
@@ -47,12 +56,7 @@ if (count($_POST) > 0) {
         <span>state account</span>
         <input type="number" name="txt_state">
 
-        <?php
-        echo ($form ? "<input type='submit' value='Update'>" : "<input type='submit' value='actualizar'>");
-        ?>
-
-        <!--         
-        : <input type="submit" value="agregar"> -->
+        <?php echo ($form ? "<input type='submit' value='Create'>" : "<input type='submit' value='Update'>"); ?>
 
     </form>
 
