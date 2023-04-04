@@ -1,7 +1,6 @@
-# CtrlAlice_
+# CtrlAlice
 
-## this is a project for the manage and register the results and tests..
-
+## this is a project for the manage and register the results and tests.
 ## Features
 
 - Control users

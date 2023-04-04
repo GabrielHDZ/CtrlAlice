@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS paciente(
  */)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /***
     example using index name in sentence sql
-    select * from paciente where c1
+    --select * from paciente where c1
 */
  CREATE TABLE IF NOT EXISTS test_oxigeno(
     id INT NOT NULL,
