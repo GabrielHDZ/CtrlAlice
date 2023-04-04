@@ -1,6 +1,7 @@
 <?php
 
 use Gabriel\ServerTienda\models\User;
+use Gabriel\ServerTienda\views\components\Nav;
 
 print_r($_POST);
 
@@ -61,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 </head>
 
 <body>
+    <?php include 'Nav.php' ?>
     <form method="POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ">
         <span>name</span>
         <input type="text" name="txt_first" value="<?php echo ($form ? '' : $paciente->get_first_name()); ?>">

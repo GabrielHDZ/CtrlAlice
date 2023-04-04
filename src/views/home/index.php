@@ -16,27 +16,11 @@ $pacientes = User::get_data_all_pacientes();
 </head>
 
 <body>
-    <header>
-        <section>
-            <img src="" alt="svg logo">
-            <h1>CtrlAlice</h1>
-        </section>
-        <nav>
-            <ul>
-                <li><a href="?view=user&option=create" target="_parent" rel="noopener noreferrer">Pacientes</a></li>
-                <li><a href="#" target="_parent" rel="noopener noreferrer">Tests</a></li>
-                <li><a href="#" target="_parent" rel="noopener noreferrer">Ajustes</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <?php include('src/views/components/nav.php') ?>
     <?php foreach ($pacientes as $paciente) { ?>
         <a href="?view=user&option=update&id=<?php echo $paciente->get_id(); ?>"><span><?php echo $paciente->get_first_name(); ?></span></a>
         <br>
-
-
     <?php } ?>
-
 </body>
 <style>
     * {

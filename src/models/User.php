@@ -108,6 +108,9 @@ class User extends Database
     public static function createFromArray($arr): User
     {
         $usuario = new User($arr['first_name'], $arr['last_name'], $arr['age'], $arr['character_person'], $arr['stateAc']);
+        /****
+         * example asign data in the method set
+         */
         $usuario->set_id($arr['id']);
         return $usuario;
     }
