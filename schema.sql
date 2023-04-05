@@ -9,15 +9,10 @@ CREATE TABLE IF NOT EXISTS paciente(
     last_name char(40) NOT NULL,
     age int(3) NOT NULL,
     character_person VARCHAR(255)NOT NULL DEFAULT'',
-    stateAc int(1) NOT NULL DEFAULT 0,
-/*     text mediumtext NOT NULL, */
+    stateAc tinyint(1) NOT NULL DEFAULT 0 ,
     PRIMARY KEY (id)
-/*     INDEX(fist_name,last_name,age)
- */)ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/***
-    example using index name in sentence sql
-    --select * from paciente where c1
-*/
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
  CREATE TABLE IF NOT EXISTS test_oxigeno(
     id INT NOT NULL,
     id_paciente INT NOT NULL,
@@ -30,7 +25,6 @@ CREATE TABLE IF NOT EXISTS paciente(
     REFERENCES paciente(id)
     ON UPDATE CASCADE ON DELETE RESTRICT
  )ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
  CREATE TABLE IF NOT EXISTS test_glucosa(
     id INT NOT NULL,
