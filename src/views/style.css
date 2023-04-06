@@ -1,0 +1,70 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* STYLES FOR THE NAVBAR
+ */
+header#nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #5BC0BE;
+}
+
+header#nav section {
+    width: 30%;
+}
+
+header#nav nav {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+header#nav nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5px;
+}
+
+/* CARDS PRESENTATION
+ */
+section#container_users {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+section#container_users>article {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #0B132B;
+    margin: 25px;
+    color: azure;
+}
+
+section#container_users>article h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+section#container_users>article>section {
+    font-size: 18px;
+}

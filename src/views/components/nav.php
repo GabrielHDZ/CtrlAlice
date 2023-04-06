@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/views/components/style.css">
+    <link rel="stylesheet" href="src/views/style.css">
     <title>CtrlAlice</title>
 </head>
 
 <body>
-    <header>
+    <header id="nav">
         <section>
             <img src='' alt='svg logo'>
-            <h1>CtrlAlice</h1>
+            <h1><a href='?view=home'>CtrlAlice</a></h1>
         </section>
         <nav>
             <ul>
