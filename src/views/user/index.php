@@ -105,6 +105,11 @@ $pacientes = User::get_data_all_pacientes();
 
             <span x-text="count"></span>
         </div>
+        <div x-data="{modal=false}">
+            <button x-on:click="modal=true">openmodal</button>
+            <div id="modal" x-show="modal=true">show or not</div>
+        </div>
+
     </nav>
     <?php foreach ($pacientes as $paciente) { ?>
 
@@ -123,6 +128,11 @@ $pacientes = User::get_data_all_pacientes();
         </article>
     <?php } ?>
 </section>
+<style>
+    div#modal {
+        background-color: red;
+    }
+</style>
 </body>
 
 </html>
