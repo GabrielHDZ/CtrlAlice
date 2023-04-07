@@ -45,7 +45,8 @@ header#nav nav>ul {
  */
 section#container_users {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     color: aliceblue;
 }
 

@@ -75,7 +75,7 @@ class User extends Database
     {
         $pacientes = [];
         $db = new Database();
-        $query = $db->connect()->query("SELECT * FROM paciente");
+        $query = $db->connect()->query("SELECT * FROM paciente LIMIT 0, 10");
         while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
             $user = User::createFromArray($r);
             array_push($pacientes, $user);

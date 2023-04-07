@@ -1,9 +1,7 @@
 <?php
-
+/*
 use Gabriel\ServerTienda\models\User;
-use Gabriel\ServerTienda\views\components\Nav;
 
-print_r($_POST);
 
 $form = true;
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -48,63 +46,83 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 }
 
+ */
 
 
+/* 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-git scale=1.0">
-    <title>Users</title>
-</head>
+<?php include('src/views/components/nav.php') ?>
 
-<body>
-    <?php include('src/views/components/nav.php') ?>
+<form method="POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ">
+    <span>name</span>
+    <input type="text" name="txt_first" value="<?php echo ($form ? '' : $paciente->get_first_name()); ?>">
+    <br>
+    <span>last name</span>
+    <input type="text" name="txt_last">
+    <br>
+    <span>age in number</span>
+    <input type="number" name="txt_age">
+    <br>
+    <span>description for the person</span>
+    <input type="text" name="txt_desc">
+    <br>
+    <span>state account</span>
+    <input type="number" name="txt_state">
 
-    <form method="POST" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> ">
-        <span>name</span>
-        <input type="text" name="txt_first" value="<?php echo ($form ? '' : $paciente->get_first_name()); ?>">
-        <br>
-        <span>last name</span>
-        <input type="text" name="txt_last">
-        <br>
-        <span>age in number</span>
-        <input type="number" name="txt_age">
-        <br>
-        <span>description for the person</span>
-        <input type="text" name="txt_desc">
-        <br>
-        <span>state account</span>
-        <input type="number" name="txt_state">
+    <?php echo ($form ? "<input type='submit' value='Create'>" : "<input type='submit' value='Update'>"); ?>
 
-        <?php echo ($form ? "<input type='submit' value='Create'>" : "<input type='submit' value='Update'>"); ?>
-
-    </form>
+</form>
 
 </body>
-<script>
-    console.log('hello wold');
-</script>
 
-//example script
-<!-- <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    Name: <input type="text" name="fname">
-    <input type="submit">
-</form> -->
+</html> */
 
-<!-- <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // collect value of input field
-            $name = htmlspecialchars($_REQUEST['fname']);
-            if (empty($name)) {
-                echo "Name is empty";
-            } else {
-                echo $name;
-            }
-        }
-        ?> -->
+
+use Gabriel\ServerTienda\models\User;
+
+$pacientes = User::get_data_all_pacientes();
+?>
+
+<?php include('src/views/components/nav.php') ?>
+<section id="container_users">
+    <nav>
+        <ul>
+            <li><Button>Nuevo paciente</Button></li>
+            <li><label for="">Buscar paciente</label><input type="search" name="search" id="search">
+                <details>
+                    <summary>Aplicar filtros</summary>
+                    <ul>
+                        <li>Estado</li>
+                        <li>Alfabeticamente</li>
+
+                    </ul>
+                </details><button>Buscar</button>
+            </li>
+        </ul>
+        <div x-data="{ count: 0 }">
+            <button x-on:click="count++">Increment</button>
+
+            <span x-text="count"></span>
+        </div>
+    </nav>
+    <?php foreach ($pacientes as $paciente) { ?>
+
+        <article>
+            <header>
+                <h1><span> num.<?php echo $paciente->get_id() ?></span> <?php echo $paciente->get_first_name() ?></h1>
+            </header>
+            <section>
+                <h2></h2>
+            </section>
+            <footer>
+                <a href="?view=user&option=update&id=<?php echo $paciente->get_id(); ?>">
+                    <span>More info</span>
+                </a>
+            </footer>
+        </article>
+    <?php } ?>
+</section>
+</body>
 
 </html>
