@@ -69,3 +69,12 @@ section#container_users>article h1 {
 section#container_users>article>section {
     font-size: 18px;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+#modales {
+    background-color: #5BC0BE;
+    display: block;
+}
