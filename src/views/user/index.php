@@ -100,22 +100,16 @@ $pacientes = User::get_data_all_pacientes();
                 </details><button>Buscar</button>
             </li>
         </ul>
-        <div x-data="{ count: 0 }">
-            <button x-on:click="count++">Increment</button>
 
-            <span x-text="count"></span>
-        </div>
-        <button onClick="saludo()">click me</button>
+        <button onClick="open_modal()">click me</button>
         <div id="modales">
-            <h1>modal</h1>
-        </div>
-        <div x-data="{ open: false }">
-            <button x-on:click="open = ! open">Mostrar</button>
-
-            <div id="modal" x-bind:class="open ? '' : 'hidden'">
-                Dropdown Contents...
+            <div>
+                <h1>modal</h1>
+                <button onclick="close_modal()">Close modal</button>
             </div>
+
         </div>
+
 
     </nav>
     <?php foreach ($pacientes as $paciente) { ?>
