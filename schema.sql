@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS ctrl_alice;
 CREATE DATABASE IF NOT EXISTS ctrl_alice;
 USE ctrl_alice;
 DROP TABLE IF EXISTS paciente,test_oxigeno;
-
 CREATE TABLE IF NOT EXISTS paciente(
     id INT(11) NOT NULL AUTO_INCREMENT, 
     first_name CHAR(40) NOT NULL DEFAULT '',
