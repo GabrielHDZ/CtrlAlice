@@ -66,6 +66,7 @@ class User extends Database
             'id' => $this->id
         ]);
     }
+
     /**
      * It gets all the data from the database and returns it as an array
      * 
