@@ -88,7 +88,7 @@ $pacientes = User::get_data_all_pacientes();
 <section id="container_users">
     <nav>
         <ul>
-            <li><Button>Nuevo paciente</Button></li>
+            <li><Button onclick="open_close_modal()">Nuevo paciente</Button></li>
             <li><label for="">Buscar paciente</label><input type="search" name="search" id="search">
                 <details>
                     <summary>Aplicar filtros</summary>
@@ -101,19 +101,16 @@ $pacientes = User::get_data_all_pacientes();
             </li>
         </ul>
 
-        <button onClick="open_modal()">click me</button>
-        <div id="modales">
-            <div>
-                <h1>modal</h1>
-                <button onclick="close_modal()">Close modal</button>
-            </div>
-
+    </nav>
+    <div id="modales">
+        <div>
+            <h1>Formulario para nuevos pacientes</h1>
+            <button onclick="open_close_modal()">Close modal</button>
         </div>
 
-
-    </nav>
+    </div>
+    <?php ?>
     <?php foreach ($pacientes as $paciente) { ?>
-
         <article>
             <header>
                 <h1><span> num.<?php echo $paciente->get_id() ?></span> <?php echo $paciente->get_first_name() ?></h1>
