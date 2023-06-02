@@ -85,11 +85,12 @@ $pacientes = User::get_data_all_pacientes();
 ?>
 
 <?php include('src/views/components/nav.php') ?>
-<section id="container_users">
-    <nav>
+<section id="pacientes">
+    <aside>
         <ul>
             <li><Button onclick="open_close_modal()">Nuevo paciente</Button></li>
-            <li><label for="">Buscar paciente</label><input type="search" name="search" id="search">
+            <li><label>Buscar paciente</label>
+                <input type="search" name="search" id="search">
                 <details>
                     <summary>Aplicar filtros</summary>
                     <ul>
@@ -101,7 +102,7 @@ $pacientes = User::get_data_all_pacientes();
             </li>
         </ul>
 
-    </nav>
+    </aside>
     <div id="modales">
         <div>
             <h1>Formulario para nuevos pacientes</h1>
@@ -109,25 +110,24 @@ $pacientes = User::get_data_all_pacientes();
         </div>
 
     </div>
-    <?php ?>
-    <?php foreach ($pacientes as $paciente) { ?>
-        <article>
-            <header>
-                <h1><span> num.<?php echo $paciente->get_id() ?></span> <?php echo $paciente->get_first_name() ?></h1>
-            </header>
-            <section>
-                <h2></h2>
-            </section>
-            <footer>
-                <a href="?view=user&option=update&id=<?php echo $paciente->get_id(); ?>">
-                    <span>More info</span>
-                </a>
-            </footer>
-        </article>
-    <?php } ?>
+    <section>
+        <?php foreach ($pacientes as $index => $paciente) { ?>
+            <article>
+                <header>
+                    <h1><span> num.<?php echo $paciente->get_id() ?></span> <?php echo $paciente->get_first_name() ?></h1>
+                </header>
+                <section>
+                    <p>aqui va una pequeña informacion respecto al paciente, mas informacion darle al boton de "mas informacion"</p>
+                </section>
+                <footer>
+                    <a href="?view=user&option=update&id=<?php echo $paciente->get_id(); ?>">
+                        <span>More info</span>
+                    </a>
+                </footer>
+            </article>
+        <?php } ?>
+    </section>
 </section>
 
 <script src="src/views/user/functions.js"></script>
-</body>
-
-</html>
+<?php include('src/views/components/nav.php') ?>

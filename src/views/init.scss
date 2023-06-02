@@ -1,6 +1,5 @@
-@import url(./user/style.css);
+@use './user/style.css';
 
-/*GENERAL SETTINGS*/
 * {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
