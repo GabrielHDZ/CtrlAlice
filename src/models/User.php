@@ -97,7 +97,7 @@ class User extends Database
      * 
      * @return An object of type User.
      */
-    public static function get_data_paciente(int $id)
+    public static function get_data_paciente(int $id): User
         {
         $db = new Database();
         $query = $db->connect()->prepare("SELECT * FROM paciente WHERE id=:ide");
@@ -113,7 +113,7 @@ class User extends Database
      * 
      * @return User an object of type User.
      */
-    public static function createFromArray($arr): User
+    public static function createFromArray(array $arr): User
         {
         $usuario = new User($arr['first_name'], $arr['last_name'], $arr['age'], $arr['character_person'], $arr['stateAc']);
         /****

@@ -19,7 +19,7 @@ $pacientes = User::get_data_all_pacientes();
                         <li>Alfabeticamente</li>
 
                     </ul>
-                </details><button>Buscar</button>
+                </details><button class="button is-primary">Buscar</button>
             </li>
         </ul>
 
