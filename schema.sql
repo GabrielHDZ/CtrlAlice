@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS paciente(
     PRIMARY KEY (id)
  )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
  CREATE TABLE IF NOT EXISTS test_oxigeno(
     id INT NOT NULL,
     id_paciente INT NOT NULL,
