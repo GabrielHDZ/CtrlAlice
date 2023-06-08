@@ -55,6 +55,5 @@ $pacientes = User::get_data_all_pacientes();
         <?php } ?>
     </section>
 </section>
-
 <script src="src/views/user/functions.js"></script>
-<?php include('src/views/components/nav.php') ?>
+<?php include('src/views/components/footer.php') ?>
