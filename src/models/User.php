@@ -102,7 +102,6 @@ class User extends Database
         $db = new Database();
         $query = $db->connect()->prepare("SELECT * FROM paciente WHERE id=:ide");
         $query->execute(['ide' => $id]);
-
         $usuario = User::createFromArray($query->fetch(PDO::FETCH_ASSOC));
         return $usuario;
         }
