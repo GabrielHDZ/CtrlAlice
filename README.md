@@ -4,5 +4,4 @@
 
 - Control users
 - Control tests
-- Data analist
 - and more
